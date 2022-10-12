@@ -1,0 +1,105 @@
+.quan-ly-nhan-vien {
+  position: relative;
+
+  .nav {
+    width: fit-content;
+    background-color: var(--color-pale-black);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+
+  .nav-link {
+    height: 46px;
+    background-color: var(--color-pale-black);
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: var(--color-black) !important;
+
+    @include flex(center, center);
+
+    &.active {
+      background-color: var(--color-light-black);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+
+  table.table {
+    thead > tr {
+      th {
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(7) {
+          text-align: center !important;
+        }
+
+        &:nth-child(6),
+        &:nth-child(7) {
+          & > span {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-them-nv {
+    position: absolute;
+    top: calc(-25px - 24px - 38px - 7px);
+    right: -25px;
+  }
+}
+
+.modal-chi-tiet-nhan-vien {
+  .offcanvas-header {
+    border-bottom: 1px solid var(--color-light-black);
+  }
+
+  .offcanvas-body {
+    .avt {
+      width: 150px;
+      height: 150px;
+      padding: 10px;
+      border: 3px dashed var(--color-secondary);
+      border-radius: 5px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.modal-them-nhan-vien {
+  .modal-dialog {
+    max-width: 700px;
+  }
+
+  .input-custom {
+    max-width: unset !important;
+
+    @include flex(center, flex-start, wrap);
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+
+    label {
+      width: 200px;
+      margin: 0;
+    }
+
+    .input-group {
+      width: 450px;
+    }
+
+    .form-error-msg {
+      margin-left: 200px;
+    }
+  }
+}

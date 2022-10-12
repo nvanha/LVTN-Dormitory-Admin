@@ -1,0 +1,190 @@
+.table-pagination-wrapper {
+  height: 100%;
+  width: 100%;
+
+  .table-section {
+    table.table {
+      background-color: var(--color-white);
+      margin: 0;
+      text-align: center;
+      border-collapse: collapse;
+      overflow: hidden;
+      table-layout: fixed;
+
+      thead {
+        background-color: var(--color-light-black);
+
+        tr {
+          border: 1px solid var(--color-light-black);
+
+          th {
+            height: 46px;
+            text-align: left;
+            vertical-align: middle;
+            background: var(--color-light-black);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.01em;
+            color: var(--color-black);
+
+            &:first-child {
+              width: 50px;
+              text-align: center;
+              padding: 0 !important;
+            }
+
+            &:not(:first-child) {
+              padding: 0 10px;
+            }
+
+            span {
+              display: inline-flex;
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border: 1px solid var(--color-light-black);
+
+          td {
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.01em;
+            color: var(--color-black);
+            vertical-align: middle;
+            text-align: left;
+            padding: 12px 10px !important;
+
+            &:first-child {
+              width: 50px;
+              text-align: center;
+              padding: 0 !important;
+            }
+          }
+
+          &:hover {
+            box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+            background-color: var(--color-pale-green);
+          }
+        }
+      }
+
+      .form-check-input {
+        margin: 0 !important;
+      }
+    }
+
+    &.disabled {
+      table {
+        thead {
+          tr {
+            th {
+              pointer-events: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination-section {
+    margin-top: 24px;
+
+    @include flex(center, flex-end);
+    gap: 12px;
+
+    .btn-previous,
+    .btn-next {
+      min-width: 40px;
+      height: 38px;
+      background-color: var(--color-green);
+      border: 1px solid var(--color-green);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+
+      @include flex(center, center);
+
+      svg > path {
+        stroke: var(--color-white);
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &.disabled {
+        background-color: var(--color-light-black) !important;
+        border-color: transparent !important;
+        cursor: no-drop !important;
+        pointer-events: none;
+
+        svg > path {
+          stroke: var(--color-secondary-black) !important;
+        }
+      }
+    }
+
+    .btn-previous > svg {
+      transform: rotate(180deg);
+    }
+
+    .pagination-number-control {
+      .num-page-item {
+        width: 40px;
+        height: 38px;
+        border: 1px solid var(--color-secondary-green);
+        border-radius: 4px;
+        cursor: pointer;
+
+        @include flex(center, center);
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+        color: var(--color-green);
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &.active {
+          background-color: var(--color-light-black) !important;
+          font-weight: 700 !important;
+          color: var(--color-secondary-black) !important;
+          cursor: no-drop !important;
+          border-color: transparent !important;
+          pointer-events: none;
+        }
+
+        &.disabled {
+          font-weight: 700 !important;
+          cursor: no-drop !important;
+          pointer-events: none;
+        }
+      }
+
+      @include flex(center, center);
+      gap: 12px;
+    }
+  }
+
+  &.hidden-col-select {
+    table {
+      thead > tr,
+      tbody > tr {
+        th,
+        td {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

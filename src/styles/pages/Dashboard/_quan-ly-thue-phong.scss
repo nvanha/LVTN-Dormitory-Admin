@@ -1,0 +1,237 @@
+.quan-ly-thue-phong {
+  .nav {
+    width: fit-content;
+    background-color: var(--color-pale-black);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+
+  .nav-link {
+    height: 46px;
+    background-color: var(--color-pale-black);
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: var(--color-black) !important;
+
+    @include flex(center, center);
+
+    &.active {
+      background-color: var(--color-light-black);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+
+  .danh-sach-chua-duyet {
+    table.table {
+      thead > tr {
+        th {
+          &:nth-child(2),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6),
+          &:nth-child(7),
+          &:nth-child(8),
+          &:nth-child(9),
+          &:nth-child(10),
+          &:nth-child(11) {
+            text-align: center !important;
+          }
+
+          &:nth-child(2),
+          &:nth-child(9),
+          &:nth-child(10),
+          &:nth-child(11) {
+            & > span {
+              display: none !important;
+            }
+          }
+
+          &:nth-child(2) {
+            width: 150px !important;
+          }
+
+          &:nth-child(9),
+          &:nth-child(10),
+          &:nth-child(11) {
+            width: 85px !important;
+          }
+        }
+      }
+
+      tbody > tr {
+        td {
+          cursor: auto !important;
+        }
+
+        &:hover {
+          box-shadow: none !important;
+          background-color: transparent !important;
+        }
+      }
+
+      .btn-action {
+        padding: 5px;
+        border-radius: 5px;
+        background-color: var(--color-blue);
+
+        @include flex(center, center);
+
+        &.delete {
+          background-color: var(--color-red);
+        }
+
+        svg {
+          width: 18px !important;
+          height: 18px !important;
+        }
+      }
+
+      thead > tr,
+      tbody > tr {
+        th,
+        td {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-preview-room {
+  &.quan-ly-thue-phong {
+    &.danh-sach-chua-duyet {
+      .modal-preview-room--content__right {
+        padding-left: 0 !important;
+        border: none !important;
+      }
+    }
+
+    &.danh-sach-chua-vao-o {
+      .modal-preview-room--wrapper {
+        max-height: 70vh;
+        overflow: auto;
+        padding-right: 15px;
+        margin-right: -15px;
+      }
+
+      .modal-preview-room--content__left {
+        height: 100%;
+
+        .input-custom {
+          width: 900px;
+
+          label {
+            width: 170px;
+          }
+        }
+      }
+
+      .modal-preview-room--content__right {
+        height: max-content !important;
+        max-height: unset !important;
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        overflow: unset !important;
+
+        .input-custom {
+          width: 900px;
+          flex-wrap: wrap;
+
+          label {
+            width: 170px;
+          }
+
+          .form-error-msg {
+            padding-left: 180px;
+            width: 100%;
+          }
+        }
+      }
+
+      .room-item {
+        &--wrapper {
+          height: 120px;
+          border: 1px solid var(--color-light-black);
+          padding: 5px;
+          position: relative;
+
+          &.active {
+            &:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              cursor: no-drop;
+            }
+
+            .room-item--inner {
+              background-color: var(--color-subtle-orange) !important;
+              
+              svg {
+                path {
+                  fill: var(--color-light-black) !important;
+                }
+
+                &.active {
+                  path {
+                    fill: var(--color-secondary) !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &--inner {
+          width: 100%;
+          height: 100%;
+          border: 1px solid var(--color-light-black);
+          background-color: var(--color-light-black);
+          padding: 15px;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          svg {
+            path {
+              fill: var(--color-subtle-black) !important;
+            }
+
+            &.active {
+              path {
+                fill: var(--color-secondary) !important;
+              }
+            }
+          }
+
+          .grid {
+            height: 100%;
+
+            span {
+              @include flex(center, center);
+            }
+          }
+        }
+
+        &--id {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: var(--color-green);
+          padding: 3px 5px;
+          border-bottom-left-radius: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3dormitoryadminstorage",
+  "bucketName": "dormitory-admin-storage",
+  "policyUUID": "6a87fff4",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
+    "DELETE"
+  ]
+}
